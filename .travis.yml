@@ -1,0 +1,13 @@
+language: Coq
+sudo: false
+addons:
+  apt:
+    packages:
+      - opam
+
+install:
+  - opam pin add coq 8.8.0
+
+script:
+  - ./configure.sh
+  - make
