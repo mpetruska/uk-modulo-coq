@@ -7,7 +7,7 @@ before_install:
   - sudo apt-get install -y -qq ocaml ocaml-native-compilers camlp4-extra opam
 
 install:
-  - opam init -a --comp=4.06.1
+  - opam init -a
   - opam pin add -y coq 8.8.0
 
 script:
