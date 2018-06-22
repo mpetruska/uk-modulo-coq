@@ -1,9 +1,10 @@
 language: Coq
-sudo: false
-addons:
-  apt:
-    packages:
-      - opam
+sudo: true
+
+before_install:
+  - sudo add-apt-repository ppa:avsm/ppa
+  - sudo apt-get update -qq
+  - apt-get install -y -qq ocaml ocaml-native-compilers camlp4-extra opam
 
 install:
   - opam init --comp=4.06.1
