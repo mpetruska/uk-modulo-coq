@@ -8,7 +8,7 @@ before_install:
 
 install:
   - opam init -a --comp=4.06.1
-  - opam pin add coq 8.8.0
+  - opam pin add -y coq 8.8.0
 
 script:
   - ./configure.sh
