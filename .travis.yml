@@ -1,5 +1,5 @@
 language: Coq
-sudo: true
+sudo: required
 
 before_install:
   - sudo add-apt-repository ppa:avsm/ppa
