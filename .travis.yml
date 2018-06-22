@@ -6,7 +6,7 @@ addons:
       - opam
 
 install:
-  - opam init -a
+  - opam init --comp=4.06.1
   - opam install coq 8.8.0
 
 script:
