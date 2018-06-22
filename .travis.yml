@@ -6,7 +6,7 @@ addons:
       - opam
 
 install:
-  - opam pin add coq 8.8.0
+  - opam install coq 8.8.0
 
 script:
   - ./configure.sh
