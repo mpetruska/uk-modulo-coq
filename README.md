@@ -4,5 +4,3 @@ UK modulo - Coq
 ===============
 
 ... coming soon ...
-
-
