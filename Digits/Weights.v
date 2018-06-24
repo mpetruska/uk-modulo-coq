@@ -22,17 +22,17 @@ Definition dot_mul (w : t) (d : AccountDigits.t) : {r : t | forall n : Fin.t 14,
   now apply VectorSpec.nth_map2.
 Defined.
 
-Definition sum : t -> Z := fold_left (fun a b => a + b) 0.
+Definition sum (weights : t) :
+    {total : Z | forall (u v w x y z a b c d e f g h : Z), weights = [u; v; w; x; y; z; a; b; c; d; e; f; g; h] ->
+                    total = u + v + w + x + y + z + a + b + c + d + e + f + g + h}.
+  refine (exist _ (fold_left Z.add 0 weights) _).
+  intros; subst weights.
+  now unfold fold_left.
+Defined.
 
-Section Proofs.
+Section Sum_digits.
 
-  Variables (u v w x y z a b c d e f g h : Z).
-  
-  Theorem sum_correct : sum [u; v; w; x; y; z; a; b; c; d; e; f; g; h] =
-      u + v + w + x + y + z + a + b + c + d + e + f + g + h.
-  Proof.
-    unfold sum.
-    now unfold fold_left.
-  Qed.
+(*  Definition sum_digits : Z -> Z :=
+*)
 
-End Proofs.
+End Sum_digits.
