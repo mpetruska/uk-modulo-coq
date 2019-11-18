@@ -13,7 +13,7 @@ before_install:
 install:
   - opam init -a
   - eval `opam config env`
-  - opam pin add -y coq 8.8.0
+  - travis_wait 30 opam pin add -y coq 8.8.0
 
 script:
   - ./configure.sh
